@@ -64,15 +64,23 @@ public class MyCollectionReader extends CollectionReader_ImplBase {
   public void initialize() throws ResourceInitializationException {
     super.initialize();
     String PATH = (String) getConfigParameterValue("InputFileName");
+    BufferedReader br = null;
     try {
-      BufferedReader br = new BufferedReader(new FileReader(PATH));
+      br = new BufferedReader(new FileReader(PATH));
       lines = new ArrayList<String>();
       String l;
       while ((l = br.readLine()) != null) {
         lines.add(l);
       }
+
     } catch (IOException e) {
       throw new ResourceInitializationException(e);
+    } finally {
+      try {
+        br.close();
+      } catch (IOException e) {
+        throw new ResourceInitializationException(e);
+      }
     }
     current = 0;
     currentLine = lines.iterator();

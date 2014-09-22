@@ -23,17 +23,14 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
       String model_path = (String) context.getConfigParameterValue("ModelPath");
       c = new Chunker(model_path);
     } catch (ClassNotFoundException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+      throw new ResourceInitializationException(e);
     } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+      throw new ResourceInitializationException(e);
     }
   }
 
   @Override
   public void process(JCas doc) throws AnalysisEngineProcessException {
-    // TODO Auto-generated method stub
     AnnotationIndex<org.apache.uima.jcas.tcas.Annotation> splitted = doc
             .getAnnotationIndex(Sentence.type);
     Iterator<org.apache.uima.jcas.tcas.Annotation> it = splitted.iterator();
@@ -47,7 +44,7 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
         int whiteBeforeStart = c.start() - text.substring(0, c.start()).replace(" ", "").length();
         int whiteBeforeEnd = c.end() - text.substring(0, c.end()).replace(" ", "").length();
         ann.setBegin(c.start() - whiteBeforeStart);
-        ann.setEnd(c.end() - whiteBeforeEnd-1);
+        ann.setEnd(c.end() - whiteBeforeEnd - 1);
 
         ann.setContent(covered);
         ann.setId(sent.getId());

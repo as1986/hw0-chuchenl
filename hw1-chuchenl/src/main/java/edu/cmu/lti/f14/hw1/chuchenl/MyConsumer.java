@@ -40,8 +40,7 @@ public class MyConsumer extends CasConsumer_ImplBase {
     } catch (CASException e) {
       throw new ResourceProcessException(e);
     }
-    // outputWriter.println(jcas.getDocumentText());
-    FSIterator it = jcas.getAnnotationIndex(GeneAnnotation.type).iterator();
+    FSIterator<?> it = jcas.getAnnotationIndex(GeneAnnotation.type).iterator();
     if (it.hasNext()) {
       GeneAnnotation n = (GeneAnnotation) it.next();
 
