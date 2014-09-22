@@ -26,17 +26,14 @@ public class MyConsumer extends CasConsumer_ImplBase {
       String outputPath = (String) getConfigParameterValue("OutputPath");
       outputWriter = new PrintWriter(outputPath, "UTF-8");
     } catch (FileNotFoundException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+      throw new ResourceInitializationException(e);
     } catch (UnsupportedEncodingException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+      throw new ResourceInitializationException(e);
     }
   }
 
   @Override
   public void processCas(CAS c) throws ResourceProcessException {
-    // TODO Auto-generated method stub
     JCas jcas;
     try {
       jcas = c.getJCas();
