@@ -1,9 +1,9 @@
 package edu.cmu.lti.f14.hw1.chuchenl;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,6 +15,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 import org.apache.uima.util.ProgressImpl;
+
+import edu.cmu.lti.f14.hw1.chuchenl.*;
 
 public class MyCollectionReader extends CollectionReader_ImplBase {
   List<String> lines;
@@ -65,7 +67,12 @@ public class MyCollectionReader extends CollectionReader_ImplBase {
     super.initialize();
     String PATH = (String) getConfigParameterValue("InputFileName");
     try {
-      lines = Files.readAllLines(Paths.get(PATH), Charset.defaultCharset());
+      BufferedReader br = new BufferedReader(new FileReader(PATH));
+      lines = new ArrayList<String>();
+      String l;
+      while ((l = br.readLine()) != null) {
+        lines.add(l);
+      }
     } catch (IOException e) {
       throw new ResourceInitializationException(e);
     }
