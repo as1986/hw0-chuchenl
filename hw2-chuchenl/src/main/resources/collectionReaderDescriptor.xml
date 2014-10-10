@@ -26,7 +26,7 @@
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import location="typeSystemDescriptor.xml"/>
+        <import location="descriptors/deiis_types.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <name>deiis_types</name>
   <description/>
   <version>1.0</version>
@@ -75,6 +77,45 @@
           <name>answer</name>
           <description/>
           <rangeTypeName>edu.cmu.deiis.types.Answer</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>edu.cmu.lti.f14.hw2.chuchenl.Sentence</name>
+      <description/>
+      <supertypeName>edu.cmu.deiis.types.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>text</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>id</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation</name>
+      <description/>
+      <supertypeName>edu.cmu.deiis.types.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>content</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>id</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>source</name>
+          <description>tagger source</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

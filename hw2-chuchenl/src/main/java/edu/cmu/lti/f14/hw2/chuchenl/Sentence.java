@@ -3,16 +3,16 @@
 /* First created by JCasGen Sun Sep 21 18:28:08 EDT 2014 */
 package edu.cmu.lti.f14.hw2.chuchenl;
 
-import org.apache.uima.jcas.JCas; 
+import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.tcas.Annotation;
+import edu.cmu.deiis.types.Annotation;
 
 
 /** 
- * Updated by JCasGen Sun Sep 21 23:52:16 EDT 2014
- * XML source: /home/as1986/workspace/hw1-chuchenl/src/main/resources/typeSystemDescriptor.xml
+ * Updated by JCasGen Fri Oct 10 03:25:07 EDT 2014
+ * XML source: /home/as1986/git/hw2-chuchenl/hw2-chuchenl/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Sentence extends Annotation {
   /** @generated

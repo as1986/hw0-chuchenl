@@ -22,6 +22,7 @@ public class MyCollectionReader extends CollectionReader_ImplBase {
   int current;
 
   Iterator<String> currentLine;
+  
 
   @Override
   public void getNext(CAS aCAS) throws IOException, CollectionException {
@@ -29,7 +30,6 @@ public class MyCollectionReader extends CollectionReader_ImplBase {
     try {
       jcas = aCAS.getJCas();
       String s = currentLine.next();
-      current++;
       jcas.setDocumentText(s);
 
       // id, text
@@ -39,6 +39,8 @@ public class MyCollectionReader extends CollectionReader_ImplBase {
         sent.setText(splitted[1]);
         sent.setId(splitted[0]);
         sent.addToIndexes();
+      } else {
+        throw new CASException();
       }
 
     } catch (CASException e) {

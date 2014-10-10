@@ -2,19 +2,20 @@
 /* First created by JCasGen Sun Sep 21 18:28:08 EDT 2014 */
 package edu.cmu.lti.f14.hw2.chuchenl;
 
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.JCasRegistry;
+import org.apache.uima.cas.Feature;
+import org.apache.uima.cas.FeatureStructure;
+import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.CASImpl;
 import org.apache.uima.cas.impl.FSGenerator;
-import org.apache.uima.cas.FeatureStructure;
-import org.apache.uima.cas.impl.TypeImpl;
-import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.FeatureImpl;
-import org.apache.uima.cas.Feature;
-import org.apache.uima.jcas.tcas.Annotation_Type;
+import org.apache.uima.cas.impl.TypeImpl;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.JCasRegistry;
+
+import edu.cmu.deiis.types.Annotation_Type;
 
 /** 
- * Updated by JCasGen Sun Sep 21 23:52:16 EDT 2014
+ * Updated by JCasGen Fri Oct 10 03:25:07 EDT 2014
  * @generated */
 public class Sentence_Type extends Annotation_Type {
   /** @generated 

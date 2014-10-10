@@ -23,12 +23,11 @@
         <value>
           <string>src/main/resources/ne-en-bio-genetag.HmmChunker</string>
         </value>
-      </nameValuePair>
+      </nameValuePair>      
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import name="typeSystemDescriptor"/>
-        <import location="typeSystemDescriptor.xml"/>
+        <import location="descriptors/deiis_types.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
@@ -47,7 +46,7 @@
   <operationalProperties>
       <modifiesCas>true</modifiesCas>
       <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
-      <outputsNewCASes>false</outputsNewCASes>
+      <outputsNewCASes>true</outputsNewCASes>
     </operationalProperties>
   </analysisEngineMetaData>
   <resourceManagerConfiguration/>

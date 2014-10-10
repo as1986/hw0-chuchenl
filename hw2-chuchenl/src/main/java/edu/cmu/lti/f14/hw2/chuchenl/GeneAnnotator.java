@@ -14,14 +14,17 @@ import org.apache.uima.resource.ResourceInitializationException;
 import com.aliasi.chunk.Chunk;
 
 public class GeneAnnotator extends JCasAnnotator_ImplBase {
-  Chunker c;
+  GenetagChunker c;
+
+  int processed = 0;
 
   @Override
   public void initialize(UimaContext context) throws ResourceInitializationException {
     super.initialize(context);
     try {
-      String model_path = (String) context.getConfigParameterValue("ModelPath");
-      c = new Chunker(model_path);
+      String modelPath = (String) context.getConfigParameterValue("ModelPath");
+      GenetagChunker.setFilePath(modelPath);
+      c = GenetagChunker.getInstance();
     } catch (ClassNotFoundException e) {
       throw new ResourceInitializationException(e);
     } catch (IOException e) {
@@ -37,7 +40,11 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
     while (it.hasNext()) {
       Sentence sent = (Sentence) it.next();
       String text = sent.getText().trim();
+      // Vector<String[][]> g = abner.getChunks(text);
+      // String[][] ss = g.get(0);
+
       Set<Chunk> chunked = c.chunk(text);
+      processed += chunked.size();
       for (Chunk c : chunked) {
         GeneAnnotation ann = new GeneAnnotation(doc);
         String covered = text.substring(c.start(), c.end());
@@ -48,6 +55,8 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase {
 
         ann.setContent(covered);
         ann.setId(sent.getId());
+        ann.setConfidence(c.score());
+        ann.setSource("GENETAG");
         ann.addToIndexes();
       }
 

@@ -3,16 +3,16 @@
 /* First created by JCasGen Sun Sep 21 19:06:54 EDT 2014 */
 package edu.cmu.lti.f14.hw2.chuchenl;
 
-import org.apache.uima.jcas.JCas; 
+import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.tcas.Annotation;
+import edu.cmu.deiis.types.Annotation;
 
 
 /** 
- * Updated by JCasGen Sun Sep 21 23:52:16 EDT 2014
- * XML source: /home/as1986/workspace/hw1-chuchenl/src/main/resources/typeSystemDescriptor.xml
+ * Updated by JCasGen Fri Oct 10 03:25:07 EDT 2014
+ * XML source: /home/as1986/git/hw2-chuchenl/hw2-chuchenl/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class GeneAnnotation extends Annotation {
   /** @generated
@@ -118,6 +118,28 @@ public class GeneAnnotation extends Annotation {
     if (GeneAnnotation_Type.featOkTst && ((GeneAnnotation_Type)jcasType).casFeat_id == null)
       jcasType.jcas.throwFeatMissing("id", "edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation");
     jcasType.ll_cas.ll_setStringValue(addr, ((GeneAnnotation_Type)jcasType).casFeatCode_id, v);}    
+   
+    
+  //*--------------*
+  //* Feature: source
+
+  /** getter for source - gets tagger source
+   * @generated
+   * @return value of the feature 
+   */
+  public String getSource() {
+    if (GeneAnnotation_Type.featOkTst && ((GeneAnnotation_Type)jcasType).casFeat_source == null)
+      jcasType.jcas.throwFeatMissing("source", "edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((GeneAnnotation_Type)jcasType).casFeatCode_source);}
+    
+  /** setter for source - sets tagger source 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setSource(String v) {
+    if (GeneAnnotation_Type.featOkTst && ((GeneAnnotation_Type)jcasType).casFeat_source == null)
+      jcasType.jcas.throwFeatMissing("source", "edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation");
+    jcasType.ll_cas.ll_setStringValue(addr, ((GeneAnnotation_Type)jcasType).casFeatCode_source, v);}    
   }
 
     

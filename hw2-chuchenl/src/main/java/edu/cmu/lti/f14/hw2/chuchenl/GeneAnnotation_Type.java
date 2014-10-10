@@ -2,19 +2,20 @@
 /* First created by JCasGen Sun Sep 21 19:06:54 EDT 2014 */
 package edu.cmu.lti.f14.hw2.chuchenl;
 
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.JCasRegistry;
+import org.apache.uima.cas.Feature;
+import org.apache.uima.cas.FeatureStructure;
+import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.CASImpl;
 import org.apache.uima.cas.impl.FSGenerator;
-import org.apache.uima.cas.FeatureStructure;
-import org.apache.uima.cas.impl.TypeImpl;
-import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.FeatureImpl;
-import org.apache.uima.cas.Feature;
-import org.apache.uima.jcas.tcas.Annotation_Type;
+import org.apache.uima.cas.impl.TypeImpl;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.JCasRegistry;
+
+import edu.cmu.deiis.types.Annotation_Type;
 
 /** 
- * Updated by JCasGen Sun Sep 21 23:52:16 EDT 2014
+ * Updated by JCasGen Fri Oct 10 03:25:07 EDT 2014
  * @generated */
 public class GeneAnnotation_Type extends Annotation_Type {
   /** @generated 
@@ -93,6 +94,30 @@ public class GeneAnnotation_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_id, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_source;
+  /** @generated */
+  final int     casFeatCode_source;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getSource(int addr) {
+        if (featOkTst && casFeat_source == null)
+      jcas.throwFeatMissing("source", "edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_source);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setSource(int addr, String v) {
+        if (featOkTst && casFeat_source == null)
+      jcas.throwFeatMissing("source", "edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation");
+    ll_cas.ll_setStringValue(addr, casFeatCode_source, v);}
+    
+  
 
 
 
@@ -112,6 +137,10 @@ public class GeneAnnotation_Type extends Annotation_Type {
  
     casFeat_id = jcas.getRequiredFeatureDE(casType, "id", "uima.cas.String", featOkTst);
     casFeatCode_id  = (null == casFeat_id) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_id).getCode();
+
+ 
+    casFeat_source = jcas.getRequiredFeatureDE(casType, "source", "uima.cas.String", featOkTst);
+    casFeatCode_source  = (null == casFeat_source) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_source).getCode();
 
   }
 }

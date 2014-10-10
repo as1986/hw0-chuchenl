@@ -8,11 +8,60 @@
     <description/>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters>
+    <configurationParameters searchStrategy="language_fallback">
       <configurationParameter>
         <name>OutputPath</name>
         <description>location to store the output.</description>
         <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    <configurationParameter>
+        <name>GeniaLower</name>
+        <description>Search lower bound for the GENIA tagger's weight</description>
+        <type>Float</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>GeniaUpper</name>
+        <description>Search upper bound for the GENIA tagger's weight</description>
+        <type>Float</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ThresUpper</name>
+        <description>Search upper bound for the threshold</description>
+        <type>Float</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ThresLower</name>
+        <description>Search lower bound for the threshold</description>
+        <type>Float</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>Search</name>
+        <description>Do we search for the best parameters or use the given ones?</description>
+        <type>Boolean</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>Thres</name>
+        <description>Specified threshold</description>
+        <type>Float</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>Genia</name>
+        <description>Specified GENIA tagger weight</description>
+        <type>Float</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
       </configurationParameter>
@@ -21,13 +70,55 @@
       <nameValuePair>
         <name>OutputPath</name>
         <value>
-          <string>hw1-chuchenl.out</string>
+          <string>hw2-chuchenl.out</string>
+        </value>
+      </nameValuePair>
+    <nameValuePair>
+        <name>GeniaLower</name>
+        <value>
+          <float>0.0</float>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>GeniaUpper</name>
+        <value>
+          <float>2.0</float>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>ThresUpper</name>
+        <value>
+          <float>0.0</float>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>ThresLower</name>
+        <value>
+          <float>-4.0</float>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>Search</name>
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>Thres</name>
+        <value>
+          <float>-0.6</float>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>Genia</name>
+        <value>
+          <float>0.3</float>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import location="typeSystemDescriptor.xml"/>
+        <import location="descriptors/deiis_types.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
