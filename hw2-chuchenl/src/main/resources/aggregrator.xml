@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="aeDescriptor">
+      <import name=".home.as1986.git.hw2-chuchenl.hw2-chuchenl.src.main.resources.aeDescriptor"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="geniaDescriptor">
+      <import name=".home.as1986.git.hw2-chuchenl.hw2-chuchenl.src.main.resources.geniaDescriptor"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>aggregrator</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>aeDescriptor</node>
+        <node>geniaDescriptor</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">edu.cmu.lti.f14.hw2.chuchenl.Sentence</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>true</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<collectionReaderDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <implementationName>edu.cmu.lti.f14.hw2.chuchenl.MyCollectionReader</implementationName>
-  <processingResourceMetaData>
-    <name>collectionReaderDescriptor</name>
+  <primitive>true</primitive>  <annotatorImplementationName>edu.cmu.lti.f14.hw2.chuchenl.GeniaAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Genia Annotator</name>
     <description/>
     <version>1.0</version>
     <vendor/>
     <configurationParameters>
       <configurationParameter>
-        <name>InputFileName</name>
+        <name>TokenShapePath</name>
+        <description>Location of the Lingpipe trained model (Genia).</description>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>true</mandatory>
       </configurationParameter>
     </configurationParameters>
- <configurationParameterSettings>
+    <configurationParameterSettings>
       <nameValuePair>
-        <name>InputFileName</name>
+        <name>TokenShapePath</name>
         <value>
-          <string>src/main/resources/data/hw2.in</string>
+          <string>src/main/resources/ne-en-bio-genia.TokenShapeChunker</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
@@ -33,18 +34,20 @@
     <fsIndexCollection/>
     <capabilities>
       <capability>
-        <inputs/>
-        <outputs>
+        <inputs>
           <type allAnnotatorFeatures="true">edu.cmu.lti.f14.hw2.chuchenl.Sentence</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">edu.cmu.lti.f14.hw2.chuchenl.GeneAnnotation</type>
         </outputs>
         <languagesSupported/>
       </capability>
     </capabilities>
   <operationalProperties>
       <modifiesCas>true</modifiesCas>
-      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
       <outputsNewCASes>true</outputsNewCASes>
     </operationalProperties>
-  </processingResourceMetaData>
+  </analysisEngineMetaData>
   <resourceManagerConfiguration/>
-</collectionReaderDescription>
+</analysisEngineDescription>
